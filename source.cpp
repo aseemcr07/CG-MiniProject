@@ -26,9 +26,9 @@ void design()
 	line(240-1,220,240-1,460);
 
     settextstyle(10,0,2);
-    int h=textheight("By Shivam");
-    w=textwidth("By Shivam");
-    outtextxy(400-w-5,600-h,"By Shivam");
+    int h=textheight("By Abdul And Abhijeet");
+    w=textwidth("By Abdul And Abhijeet");
+    outtextxy(400-w-5,600-h,"By Abdul And Abhijeet");
 }
 
 void dis(int turn, int p)
