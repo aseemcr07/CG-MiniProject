@@ -1,12 +1,13 @@
 #include <iostream>
-#include<stdio.h>
-#include<stdlib.h>
+//#include<stdio.h>
+//#include<stdlib.h>
 #include <graphics.h>
 using namespace std;
 
-void design()
+void boardDesign()
 {
-    settextstyle(10,0,6);
+    settextstyle(9,0,6);
+    setcolor(9);
     int w=textwidth("Tic Tac Toe");
     outtextxy((400-w)/2,80,"Tic Tac Toe");
 	line(160,220,160,460);
@@ -25,15 +26,15 @@ void design()
 	line(240+1,220,240+1,460);
 	line(240-1,220,240-1,460);
 
-    settextstyle(10,0,2);
-    int h=textheight("By Abdul And Abhijeet");
-    w=textwidth("By Abdul And Abhijeet");
-    outtextxy(400-w-5,600-h,"By Abdul And Abhijeet");
+    //settextstyle(10,0,2);
+    //int h=textheight("By Abdul And Abhijeet");
+    //w=textwidth("By Abdul And Abhijeet");
+    //outtextxy(400-w-5,600-h,"By Abdul And Abhijeet");
 }
 
 void dis(int turn, int p)
 {
-    settextstyle(10,0,6);
+    settextstyle(9,0,6);
     int w=0,h=0;
     if(turn==1){
         h=textheight("X");
@@ -269,17 +270,20 @@ void computer(char *a,int turn){
 int main()
 {
     //Tic Tac Toe
-    initwindow(400,600,"Tic Tac Toe");
-    design();
+    initwindow(400,600,"Tic Tac Toe",50,50);
+    boardDesign();
     int x=0;
     POINT pos;
     int turn=0;
     char b[9]={0};
     for(int i=0;i<9;i++)
         b[i]=0;
-    settextstyle(10,0,3);
-    int w=textwidth("Your Turn !!");
-    outtextxy((400-w)/2,500,"Your Turn !!");
+    settextstyle(9,0,3);
+    //int w=textwidth("Your Turn !!");
+    //outtextxy((400-w)/2,500,"Your Turn !!");
+    cout<<"Game begins!"<<endl;
+    cout<<"Game in progress..."<<endl;
+
     while(x==0 && turn<=9)
     {
         if(GetAsyncKeyState(VK_LBUTTON))
@@ -357,21 +361,21 @@ int main()
             }
         }
     }
-    cout<<"Thank You !!";
+    cout<<"Game ended.";
     if(x==1){
-        settextstyle(10,0,3);
-        int w=textwidth("You Wins !!");
-        outtextxy((400-w)/2,500,"You Wins !!");
+        settextstyle(9,0,3);
+        int w=textwidth("You Win !");
+        outtextxy((400-w)/2,500,"You Win !");
     }
     else if(x==2){
-        settextstyle(10,0,3);
-        int w=textwidth("Computer Wins !!");
-        outtextxy((400-w)/2,500,"Computer Wins !!");
+        settextstyle(9,0,3);
+        int w=textwidth("Computer Wins !");
+        outtextxy((400-w)/2,500,"Computer Wins !");
     }
     else if(x==0){
-        settextstyle(10,0,3);
-        int w=textwidth("Its a Draw !!");
-        outtextxy((400-w)/2,500,"Its a Draw !!");
+        settextstyle(9,0,3);
+        int w=textwidth("It's a Draw !");
+        outtextxy((400-w)/2,500,"It's a Draw !");
     }
     getch();
     return 0;
