@@ -1,8 +1,11 @@
 #include <iostream>
-//#include<stdio.h>
-//#include<stdlib.h>
 #include <graphics.h>
 using namespace std;
+
+//CGL Mini Project - Tic Tac Toe
+//Group members:    Abdul Aseem Shaikh (Class: SE COMP SS, PRN: S19111065)
+//                  Abhijeet Prasad (Class: SE COMP SS, PRN: S19111056)
+
 
 void boardDesign()
 {
@@ -25,11 +28,6 @@ void boardDesign()
 	line(240,220,240,460);
 	line(240+1,220,240+1,460);
 	line(240-1,220,240-1,460);
-
-    //settextstyle(10,0,2);
-    //int h=textheight("By Abdul And Abhijeet");
-    //w=textwidth("By Abdul And Abhijeet");
-    //outtextxy(400-w-5,600-h,"By Abdul And Abhijeet");
 }
 
 void dis(int turn, int p)
@@ -279,8 +277,6 @@ int main()
     for(int i=0;i<9;i++)
         b[i]=0;
     settextstyle(9,0,3);
-    //int w=textwidth("Your Turn !!");
-    //outtextxy((400-w)/2,500,"Your Turn !!");
     cout<<"Game begins!"<<endl;
     cout<<"Game in progress..."<<endl;
 
@@ -380,3 +376,4 @@ int main()
     getch();
     return 0;
 }
+
